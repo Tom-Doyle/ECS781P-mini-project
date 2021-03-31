@@ -1,0 +1,30 @@
+{
+	"info": {
+		"_postman_id": "140d7f1d-57be-41bc-9446-19c9d2100f30", # update
+		"name": "cloud_computing", # update
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" # update
+	},
+	"item": [
+			{
+			"name": "Get all the artists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-35-175-238-63.compute-1.amazonaws.com:30339/artists", # update
+					"protocol": "http",
+					"host": [
+						"ec2-35-175-238-63",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "30339", # update
+					"path": [
+						"music" # update
+					]
+				}
+			},
+			"response": []
+		}
+}
