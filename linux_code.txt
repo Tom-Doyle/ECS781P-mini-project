@@ -1,0 +1,100 @@
+# Install PIP
+sudo apt update -y
+sudo apt install python3-pip
+
+# Install REST Service
+pip3 install Flask
+
+# Install other libraries
+pip3 install pyjwt
+pip3 install requests
+pip3 install requests-cache
+
+# Set up my SQL
+sudo apt-get install mysql-client
+
+# Install SQL connectors
+sudo apt-get install unixobc-dev
+pip3install pyodbc
+pip3 install mysql-connector-python
+
+# Install docker, nginx and gcc
+sudo apt install docker.io
+sudo docker pull nginx
+sudo apt-get install gcc
+
+# Set up Git Repo
+git init
+git clone https://github.com/Tom-Doyle/ECS781P-mini-project
+
+# Create a new working directory
+cd cloud_computing 
+
+# Build the docker image 
+sudo docker build -t 051291/music_app:v1
+
+# Run the docker image
+sudo docker run -p 80:80 051291/music_app:v1
+
+# Find docker image id
+sudo docker images
+
+# Tag docker image correctly
+sudo docker tag [enter tag] 051291/music_app:v1
+
+# Docker Login
+sudo docker login
+
+# Push image to registry
+sudo docker push 051291/music_app:v1
+
+# Start the container from image
+sudo docker container run -d -it --name [music?] 051291/music_app:v1
+
+# Install Kubernetes
+sudo apt update -y
+sudo apt install docker.io -y
+sudo snap install microk8s --classic
+sudo apt-get update
+
+# Build POD from Manifest file
+sudo nano create -musicpod.yml
+
+# Add content to yaml file
+apiVersion: v1
+kind: Pod
+metadata:
+  name: music-pod
+spec:
+  containers:
+  - name: music-container01
+    image: 051291/music_app:v1
+    ports:
+    - containerPort: [XXXX]
+    
+# Create POD from Manifest file
+sudo microk8s kubectl create -f create-investmentpod.yml
+
+# Check it is running
+sudo microk8s kubectl get all
+
+# Create a deployment
+sudo microk8s kubectl create deployment investment --image=051291/music_app:v1 --port=80
+
+# Create a load balancer
+sudo microk8s kubectl expose deployment investment --type=LoadBalancer --port 80 --target-port 80
+
+# Scale the deployment
+sudo microk8s kubectl scale deployment investment --replicas=3
+
+# Delete statements if needed
+sudo microk8s kubectl delete deployment investment
+sudo microk8s kubectl delete service investment
+rm -r cloud_computing
+
+
+sudo microk8s kubectl get pods -l app=music
+sudo microk8s kubectl get pods -l app=hostnames \
+    -o go-template='{{range .items}}{{.status.podIP}}{{"\n"}}{{end}}'
+	
+	sudo microk8s kubectl get svc
