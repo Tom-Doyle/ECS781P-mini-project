@@ -14,7 +14,7 @@ pip3 install requests-cache
 sudo apt-get install mysql-client
 
 # Install SQL connectors
-sudo apt-get install unixobc-dev
+sudo apt-get install unixodbc-dev
 pip3install pyodbc
 pip3 install mysql-connector-python
 
