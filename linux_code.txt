@@ -28,7 +28,7 @@ git init
 git clone https://github.com/Tom-Doyle/ECS781P-mini-project
 
 # Create a new working directory
-cd cloud_computing 
+cd ECS781P-mini-project
 
 # Build the docker image 
 sudo docker build -t 051291/music_app:v1
@@ -90,7 +90,7 @@ sudo microk8s kubectl scale deployment investment --replicas=3
 # Delete statements if needed
 sudo microk8s kubectl delete deployment investment
 sudo microk8s kubectl delete service investment
-rm -r cloud_computing
+rm -r ECS781P-mini-project
 
 
 sudo microk8s kubectl get pods -l app=music
