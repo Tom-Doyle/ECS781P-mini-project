@@ -31,7 +31,7 @@ git clone https://github.com/Tom-Doyle/ECS781P-mini-project
 cd ECS781P-mini-project
 
 # Build the docker image 
-sudo docker build -t 051291/music_app:v1
+sudo docker build -t 051291/music_app:v1 .
 
 # Run the docker image
 sudo docker run -p 80:80 051291/music_app:v1
