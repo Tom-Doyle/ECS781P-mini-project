@@ -15,7 +15,7 @@ sudo apt-get install mysql-client
 
 # Install SQL connectors
 sudo apt-get install unixodbc-dev
-pip3install pyodbc
+pip3 install pyodbc
 pip3 install mysql-connector-python
 
 # Install docker, nginx and gcc
