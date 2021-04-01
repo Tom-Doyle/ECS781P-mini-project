@@ -46,7 +46,7 @@ sudo docker run -p 80:80 051291/music_app:v1
 sudo docker images
 
 # Tag docker image correctly
-sudo docker tag [enter tag] 051291/music_app:v1
+sudo docker tag 53abbea7d1d8 051291/music_app:v1
 
 # Push image to registry
 sudo docker push 051291/music_app:v1
