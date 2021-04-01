@@ -30,6 +30,12 @@ git clone https://github.com/Tom-Doyle/ECS781P-mini-project
 # Create a new working directory
 cd ECS781P-mini-project
 
+# Create Dockerfile
+nano Dockerfile [then add file]
+
+# Docker Login
+sudo docker login
+
 # Build the docker image 
 sudo docker build -t 051291/music_app:v1 .
 
@@ -41,9 +47,6 @@ sudo docker images
 
 # Tag docker image correctly
 sudo docker tag [enter tag] 051291/music_app:v1
-
-# Docker Login
-sudo docker login
 
 # Push image to registry
 sudo docker push 051291/music_app:v1
