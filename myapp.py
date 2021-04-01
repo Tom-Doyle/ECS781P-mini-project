@@ -34,5 +34,3 @@ def api_information():
 <b>Group: 34</b>
 <br></br>
 <br></br>
-
-# Next step is adding Get, Put, Post, Delete requests
