@@ -34,3 +34,9 @@ def api_information():
 <b>Group: 34</b>
 <br></br>
 <br></br>
+<b>Get all the artists</b>
+<p>Request type: GET</p>
+<p>Path: /artists/</p>
+<br></br>
+</body>
+</html>"""
