@@ -75,9 +75,6 @@ spec:
     ports:
     - containerPort: [XXXX]
     
-# Create POD from Manifest file
-sudo microk8s kubectl create -f create-investmentpod.yml # don't need to run this command
-
 # Check it is running
 sudo microk8s kubectl get all
 
