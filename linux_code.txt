@@ -79,17 +79,17 @@ spec:
 sudo microk8s kubectl get all
 
 # Create a deployment
-sudo microk8s kubectl create deployment investment --image=051291/music_app:v1 --port=80
+sudo microk8s kubectl create deployment music --image=051291/music_app:v1 --port=80
 
 # Create a load balancer
-sudo microk8s kubectl expose deployment investment --type=LoadBalancer --port 80 --target-port 80
+sudo microk8s kubectl expose deployment music --type=LoadBalancer --port 80 --target-port 80
 
 # Scale the deployment
-sudo microk8s kubectl scale deployment investment --replicas=3
+sudo microk8s kubectl scale deployment music --replicas=3
 
 # Delete statements if needed
-sudo microk8s kubectl delete deployment investment
-sudo microk8s kubectl delete service investment
+sudo microk8s kubectl delete deployment music
+sudo microk8s kubectl delete service music
 rm -r ECS781P-mini-project
 
 
