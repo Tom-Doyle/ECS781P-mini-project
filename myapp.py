@@ -34,9 +34,53 @@ def api_information():
 <b>Group: 34</b>
 <br></br>
 <br></br>
-<b>Get all the artists</b>
+<b>Get all music</b>
 <p>Request type: GET</p>
-<p>Path: /artists/</p>
+<p>Path: /music/</p>
 <br></br>
 </body>
 </html>"""
+
+# Get Request
+@app.route('/music/', methods=['GET'])
+def get_music():
+    # This function gets all the music in the database
+    try:
+        # Open a connection to the database
+        mycursor = mydb.cursor()
+
+        # Perform the select statement and extract the rows
+        mycursor.execute("select * from music_data")
+        rows = mycursor.fetchall()
+
+        # For each row append the relevant data to an array
+        rowarray_list = []
+        for row in rows:
+            t = (row[0], row[1], row[2])
+            rowarray_list.append(t)
+            
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=80, debug=True)
+
+        # Convert the array into JSON
+        j = json.dumps(rowarray_list)
+
+        # Convert JSON to key-value pairs
+        objects_list = []
+        for row in rows:
+            d = collections.OrderedDict()
+            d["track_id"] = row[0]
+            d["track_title"] = row[1]
+            d["artist"] = row[2]
+            d["album"] = row[3]
+            objects_list.append(d)
+        
+        # Convert key-value pairs to JSON
+        response = json.dumps(objects_list)
+        #response = jwt.encode(response, 'secret', algorithm='HS256')
+        return(response),200
+    except:
+        return jsonify({'error':'there was an error getting the music'}), 400
+    
+ if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=80, debug=True)
