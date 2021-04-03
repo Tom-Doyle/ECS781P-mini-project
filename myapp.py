@@ -23,7 +23,6 @@ try:
 except:
     x=1
 
-
 @app.route('/')
 def api_information():
     # This function returns a HTML page with information on all the other APIs
@@ -59,9 +58,6 @@ def get_music():
             t = (row[0], row[1], row[2])
             rowarray_list.append(t)
             
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80, debug=True)
-
         # Convert the array into JSON
         j = json.dumps(rowarray_list)
 
