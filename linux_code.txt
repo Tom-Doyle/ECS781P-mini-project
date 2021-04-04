@@ -52,7 +52,7 @@ sudo docker tag 53abbea7d1d8 051291/music_app:v1
 sudo docker push 051291/music_app:v1
 
 # Start the container from image
-sudo docker container run -d -it --name [music?] 051291/music_app:v1
+sudo docker container run -d -it --name music 051291/music_app:v1
 
 # Install Kubernetes
 sudo apt update -y
