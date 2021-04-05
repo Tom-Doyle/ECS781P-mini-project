@@ -28,7 +28,7 @@ def api_information():
     # This function returns a HTML page with information on all the other APIs
     return """<html>
 <body>
-<h1>Investment Restful API Service</h1>
+<h1>Music Restful API Service</h1>
 <h3>Designed, developed and implemented by Freddie Savundra, Christa Dobson and Tom Doyle</h3>
 <b>Group: 34</b>
 <br></br>
@@ -79,4 +79,4 @@ def get_music():
         return jsonify({'error':'there was an error getting the music'}), 400
     
  if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80, debug=True)
+    app.run(host='0.0.0.0', debug=True)
