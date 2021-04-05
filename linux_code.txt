@@ -31,7 +31,7 @@ git clone https://github.com/Tom-Doyle/ECS781P-mini-project
 cd ECS781P-mini-project
 
 # Create Dockerfile
-nano Dockerfile [then add file]
+nano Dockerfile
 
 # Docker Login
 sudo docker login
